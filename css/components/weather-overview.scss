@@ -1,0 +1,126 @@
+@use '../variables' as *;
+
+section.weather-overview {
+    height: 100vw;
+    width: 1058px;
+
+    #button-bar {
+        font-size: map-get($map: $typo, $key: 'general-controls');
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: map-get($map: $colors, $key: 'background-color');
+        border: map-get($colors, 'border-color') 2px solid;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        height:62px;
+    }
+
+    a,
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        margin: 10px;
+        color: map-get($colors, 'text-color');
+        transition: color 150ms ease-in-out;
+
+        i {
+            font-size: map-get($typo, 'icon-size-mediumer') !important;
+        }
+
+        &:hover {
+            color: map-get($map: $colors, $key: 'link-hover');
+        }
+    }
+
+    #charts {
+        cursor: pointer;
+        background-color: map-get($map: $colors, $key: 'background-darker');
+        border: none;
+        outline: none;
+        font-size: map-get($map: $typo, $key: 'general-controls');
+        font-weight:600;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    #seperator {
+        height: 25px;
+        width: 2px;
+        border-radius: 50%;
+        background-color: map-get($map: $colors, $key: 'seperator-color');
+        margin: 0 15px;
+    }
+
+    #radar {
+        display: flex;
+        flex-direction: column;
+        background-color: transparentize($color: map-get($colors,'background-color'), $amount: 0.45);
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    #current-chart {
+        align-self: center;
+        position: relative;
+
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        max-width:1058px;
+        max-height:915px;
+        
+        object-fit: contain;
+    }
+
+    #chart-map {
+        position: absolute;
+        display: flex;
+
+        width:100%;
+        height:fit-content;
+
+        border-left: map-get($map: $colors, $key: 'border-color') 2px solid;
+        border-right: map-get($map: $colors, $key: 'border-color') 2px solid;
+
+        height:100%;
+        width:100%;
+
+        max-width: 1058px;
+        max-height: 915px;
+    }
+
+    #timestamp {
+        margin-left: 25px;
+        margin-top: 25px;
+        background-color: map-get($colors, 'background-color');
+        padding: 8px;
+        font-weight: 700;
+        border-radius: 6px;
+        font-size: map-get($typo, 'timestamp-size');
+        height:fit-content;
+    }
+
+    #slider {
+        width: 85%;
+        background-color: transparent;
+        margin:0 15px;
+        background: linear-gradient(blue, gray, 45deg);
+    }
+
+    #radar-controls{
+        height:60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: map-get($map: $colors, $key: 'background-color');
+        border: map-get($colors, 'border-color') 2px solid;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}

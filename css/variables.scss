@@ -1,0 +1,21 @@
+$colors: (
+    background-color: rgb(120, 187, 241),
+    background-darker: rgb(162, 206, 241),
+    text-color: black,
+    link-hover: rgb(18, 132, 224),
+    text-color-hover: white,
+    seperator-color:rgb(66, 66, 66),
+    border-color: dimgray,
+    weather-icon-bg:rgb(255, 245, 231),
+    high-color: rgb(211, 79, 79),
+    low-color: rgb(36, 98, 213),
+);
+$typo: (
+    input-size-big: 18px,
+    search-result:16px,
+    fontawesome: 'Font Awesome 5 Free',
+    icon-size-mediumer: 18px,
+    timestamp-size:24px,
+    general-controls:14px,
+    temperature-size:18px,
+);

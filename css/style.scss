@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use 'components/nav';
+@use 'components/observations-widget';
+@use 'components/weather-overview';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+
+i{
+    font-family: 'FontAwesome';
+}
+
+header {
+    width: 100vw;
+}
+
+.header-container {
+    background-color: map-get($colors, 'background-color');
+    height: 80px;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        width: 140px;
+    }
+}
+
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    background-image:url('https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2022/10/CLI371.weather.jacobs_ladder_michelle_cowbourne.jpg');
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+section{
+    margin:0 25px;
+}

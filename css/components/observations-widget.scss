@@ -1,0 +1,105 @@
+@use '../variables' as *;
+
+section.observations-section {
+    width: 25vw;
+    height: 100vw;
+
+    #button-bar {
+        font-size: map-get($map: $typo, $key: 'general-controls');
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: map-get($map: $colors, $key: 'background-color');
+        border: map-get($colors, 'border-color') 2px solid;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        height:62px;
+    }
+
+    a,
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        margin: 10px;
+        color: map-get($colors, 'text-color');
+        transition: color 150ms ease-in-out;
+
+        i {
+            font-size: map-get($typo, 'icon-size-mediumer') !important;
+        }
+
+        &:hover {
+            color: map-get($map: $colors, $key: 'link-hover');
+        }
+    }
+
+    #current-observations {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        #current-icon {
+            padding: 2px;
+            background-color: map-get($map: $colors, $key: 'weather-icon-bg');
+            height: 48px;
+            margin: 5px 5px;
+            border-radius: 4px;
+        }
+
+        #current-temperature {
+            font-weight: 700;
+            margin: 2px 5px;
+            font-size: map-get($map: $typo, $key: 'temperature-size');
+        }
+
+        #current-location{
+            margin: 2px 5px;
+
+        }
+
+        #observations-information{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    #forecast{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+
+        border-left: map-get($map: $colors, $key: 'border-color') 2px solid;
+        border-right: map-get($map: $colors, $key: 'border-color') 2px solid;
+
+        .forecast-item{
+            background-color:map-get($map: $colors, $key: 'background-darker');
+            padding:15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .forecast-icon{
+            padding: 2px;
+            background-color: map-get($map: $colors, $key: 'weather-icon-bg');
+            height: 48px;
+            margin: 5px 5px;
+            border-radius: 4px;
+        }
+
+        .forecast-temperature-high{
+            margin: 0 5px;
+            color: map-get($map: $colors, $key: 'high-color');
+            font-weight: 700;
+        }
+
+        .forecast-temperature-low{
+            margin: 0 5px;
+            color: map-get($map: $colors, $key: 'low-color');
+            font-weight:700;
+        }
+    }
+}

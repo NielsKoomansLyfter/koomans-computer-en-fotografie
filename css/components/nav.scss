@@ -1,0 +1,26 @@
+@use '../variables' as *;
+
+nav a{
+    text-decoration: none;
+    margin: 0 5px 0 5px;
+    padding:10px;
+    background-color: map-get($map: $colors, $key: 'background-color');
+    border:map-get($map: $colors, $key: 'link-hover') solid 2px;
+    color:map-get($colors,'text-color');
+    border-radius: 8px;
+    transition: 150ms ease-in-out;
+
+    .fa-solid{
+        margin-right:10px;
+    }
+
+    &:hover{
+        color: map-get($colors,'text-color-hover');
+        background-color:map-get($map: $colors, $key: 'link-hover');
+        border-color:map-get($map: $colors, $key: 'background-color');
+    }
+
+    &:active{
+        box-shadow: inset 0 6px 20px transparentize($color: #000000, $amount: 0.65);
+    }
+}
