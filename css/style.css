@@ -22,8 +22,12 @@ nav a:active {
 }
 
 section.observations-section {
+  background-color: rgb(162, 206, 241);
   width: 25vw;
-  height: 100vw;
+  height: 80vh;
+  border: dimgray 2px solid;
+  border-radius: 12px;
+  padding: 5px;
 }
 section.observations-section #button-bar {
   font-size: 14px;
@@ -33,9 +37,7 @@ section.observations-section #button-bar {
   align-items: center;
   justify-content: center;
   background-color: rgb(120, 187, 241);
-  border: dimgray 2px solid;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 10px;
   height: 62px;
 }
 section.observations-section a,
@@ -78,37 +80,6 @@ section.observations-section #current-observations #current-location {
 section.observations-section #current-observations #observations-information {
   display: flex;
   flex-direction: column;
-}
-section.observations-section #forecast {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  border-left: dimgray 2px solid;
-  border-right: dimgray 2px solid;
-}
-section.observations-section #forecast .forecast-item {
-  background-color: rgb(162, 206, 241);
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-section.observations-section #forecast .forecast-icon {
-  padding: 2px;
-  background-color: rgb(255, 245, 231);
-  height: 48px;
-  margin: 5px 5px;
-  border-radius: 4px;
-}
-section.observations-section #forecast .forecast-temperature-high {
-  margin: 0 5px;
-  color: rgb(211, 79, 79);
-  font-weight: 700;
-}
-section.observations-section #forecast .forecast-temperature-low {
-  margin: 0 5px;
-  color: rgb(36, 98, 213);
-  font-weight: 700;
 }
 
 section.weather-overview {
@@ -217,6 +188,89 @@ section.weather-overview #radar-controls {
   border: dimgray 2px solid;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+}
+
+#weathertext {
+  background-color: rgb(162, 206, 241);
+}
+#weathertext p {
+  margin: 15px 0;
+}
+
+#forecast {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+#forecast .forecast-item {
+  background-color: rgb(162, 206, 241);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#forecast .forecast-date {
+  border-bottom: rgb(120, 187, 241) 1px solid;
+}
+#forecast .forecast-icon {
+  padding: 2px;
+  background-color: rgb(255, 245, 231);
+  height: 48px;
+  margin: 5px 5px;
+  border-radius: 4px;
+}
+#forecast i {
+  font-family: "FontAwesome";
+  font-weight: 900;
+}
+#forecast .forecast-temperature-high {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 3px 18px;
+  color: rgb(211, 79, 79);
+  font-weight: 400;
+}
+#forecast .forecast-temperature-high::before {
+  content: "\f185";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+  font-weight: 900;
+}
+#forecast .forecast-temperature-low {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 3px 18px;
+  color: rgb(36, 98, 213);
+  font-weight: 400;
+}
+#forecast .forecast-temperature-low::before {
+  content: "\f186";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+  font-weight: 900;
+}
+#forecast #forecast-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: rgb(120, 187, 241) 1px solid;
+}
+#forecast #forecast-wind {
+  margin: 3px 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#forecast #forecast-wind-icon {
+  margin-right: 10px;
+}
+#forecast #forecast-wind-speed {
+  font-weight: 400;
 }
 
 * {

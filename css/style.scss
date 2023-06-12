@@ -2,6 +2,8 @@
 @use 'components/nav';
 @use 'components/observations-widget';
 @use 'components/weather-overview';
+@use 'components/forecast';
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap');
 
 * {
