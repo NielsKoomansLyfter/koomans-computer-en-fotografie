@@ -5,7 +5,6 @@ const current_location = document.getElementById('current-location');
 const current_temperature = document.getElementById('current-temperature');
 const refresh_button = document.getElementById('refresh-button');
 refresh_button.addEventListener('click', () => {
-    console.log("refresh button clicked");
     GetObservations();
     GetForecast();
 });

@@ -4,13 +4,15 @@
 @use 'components/weather-overview';
 @use 'components/forecast';
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Mukta', sans-serif;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 i{
@@ -38,6 +40,7 @@ main {
     padding: 30px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     background-image:url('https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2022/10/CLI371.weather.jacobs_ladder_michelle_cowbourne.jpg');
     background-size:contain;
     background-repeat:no-repeat;
@@ -45,4 +48,10 @@ main {
 
 section{
     margin:0 25px;
+}
+
+@media(max-width: 1610px){
+    main{
+        flex-direction: column;
+    }
 }

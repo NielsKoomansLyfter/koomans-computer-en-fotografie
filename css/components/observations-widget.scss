@@ -1,11 +1,11 @@
 @use '../variables' as *;
 
 section.observations-section {
-    background-color: map-get($map: $colors, $key: 'background-darker');
-    width: 25vw;
-    height: 80vh;
+    background-color: map-get($map: $colors, $key: 'background-color');
+    width: 40vw;
+    height: 90vh;
 
-    border: map-get($map: $colors, $key: 'border-color') 2px solid;
+    border: map-get($map: $colors, $key: 'border-color') 1px solid;
     border-radius: 12px;
 
     padding:5px;
@@ -16,10 +16,9 @@ section.observations-section {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         background-color: map-get($map: $colors, $key: 'background-color');
         border-radius: 10px;
-        height:62px;
     }
 
     a,
@@ -47,9 +46,8 @@ section.observations-section {
 
         #current-icon {
             padding: 2px;
-            background-color: map-get($map: $colors, $key: 'weather-icon-bg');
             height: 48px;
-            margin: 5px 5px;
+            margin: 5px 15px;
             border-radius: 4px;
         }
 
@@ -57,6 +55,7 @@ section.observations-section {
             font-weight: 700;
             margin: 2px 5px;
             font-size: map-get($map: $typo, $key: 'temperature-size');
+            height: 40px;
         }
 
         #current-location{

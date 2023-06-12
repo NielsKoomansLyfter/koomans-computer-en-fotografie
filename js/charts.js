@@ -1,3 +1,22 @@
+
+class Timestamp{
+    constructor(year,month,day,hour,minute,second){
+        this.Year = year;
+        this.Month = month;
+        this.Day = day;
+        this.Hour = hour;
+        this.Minutes = minute;
+        this.Seconds = second;
+    }
+}
+
+class ChartTime{
+    constructor(time,url){
+        this.Time = time;
+        this.Url = url;
+    }
+}
+
 let images = [];
 let isLoading = false;
 
@@ -5,8 +24,7 @@ const timestamp = document.getElementById('timestamp');
 const chart_selector = document.getElementById('charts');
 chart_selector.addEventListener('change', () =>{
     let selectedOption = chart_selector.options[chart_selector.selectedIndex];
-    GetCharts(selectedOption.getAttribute('value'),24,0,false,true);
-    console.log(selectedOption);
+    GetCharts(selectedOption.getAttribute('data-domain'),selectedOption.getAttribute('value'),24,0,false,true);
 });
 
 const slider = document.getElementById('slider');
@@ -17,21 +35,19 @@ slider.addEventListener('input', () => {
         let date = ParseTime(images[slider.value].Time);
 
         timestamp.innerText = `${date.Hour}:${date.Minutes}`;
-
-        console.log(images[slider.value]);
     }
 });
 
 const current_chart = document.getElementById('current-chart');
 
 let selectedOption = chart_selector.options[chart_selector.selectedIndex];
-GetCharts(selectedOption.getAttribute('value'),24,0,false,true);
+GetCharts(selectedOption.getAttribute('data-domain'), selectedOption.getAttribute('value'),24,0,false,true);
 
-function GetCharts(type, history, forecast, renderText, renderBackground) {
+function GetCharts(domain, type, history, forecast, renderText, renderBackground) {
     isLoading=true;
     images = [];
 
-    let url = type.indexOf('RadarMap') >= 0 ? `https://image-lite.buienradar.nl/3.0/metadata/${type}` : `https://image.buienradar.nl/2.0/metadata/sprite/${type}`;
+    let url = domain.indexOf('image-lite') >= 0 ? `https://image-lite.buienradar.nl/3.0/metadata/${type}` : `https://image.buienradar.nl/2.0/metadata/sprite/${type}`;
     url += `?history=${history}`;
     url += `&forecast=${forecast}`;
     url += `&size=Full`;
@@ -87,22 +103,4 @@ function FixInt(int){
     }
 
     return int;
-}
-
-class Timestamp{
-    constructor(year,month,day,hour,minute,second){
-        this.Year = year;
-        this.Month = month;
-        this.Day = day;
-        this.Hour = hour;
-        this.Minutes = minute;
-        this.Seconds = second;
-    }
-}
-
-class ChartTime{
-    constructor(time,url){
-        this.Time = time;
-        this.Url = url;
-    }
 }
